@@ -1,8 +1,11 @@
 import express from "express";
+import path from "path";
 
 const app = express();
 const PORT = 8000;
 
+const __dirname = path.resolve();
+console.log(__dirname, "========");
 // app.get("/", (req, res, next) => {
 //   console.log(req);
 
@@ -15,9 +18,11 @@ const PORT = 8000;
 // });
 
 app.get("/", (req, res) => {
-  res.sendFile(
-    "/Users/grays/OneDrive/Documents/Dev/Node-2025/user app/src/html/index.html"
-  );
+  // res.sendFile(
+  //   "/Users/grays/OneDrive/Documents/Dev/Node-2025/user app/src/html/index.html"
+  // );
+
+  res.sendFile(__dirname + "/src/html/index.html");
 });
 app.listen(PORT, (error) => {
   error
