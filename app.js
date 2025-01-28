@@ -29,12 +29,12 @@ app.get("/", (req, res) => {
 // user registration controller
 app.get("/register", (req, res) => {
   console.log("req received register");
-  res.sendFile(__dirname + "/src/html/index.html");
+  res.sendFile(__dirname + "/src/html/register.html");
 });
 // user Login Controller
 app.get("/login", (req, res) => {
   console.log("req received login");
-  res.sendFile(__dirname + "/src/html/index.html");
+  res.sendFile(__dirname + "/src/html/login.html");
 });
 // app.get("/api/v1/get-user", (req, res) => {
 //   res.json({
