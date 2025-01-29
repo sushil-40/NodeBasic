@@ -1,5 +1,6 @@
 import express from "express";
 import path from "path";
+
 const app = express();
 
 const PORT = 8000;
@@ -12,6 +13,7 @@ const __dirname = path.resolve();
 //serve static file from the public directories
 app.use(express.static(__dirname + `/public`));
 
+app.use(express.urlencoded({ extended: true }));
 // home controller
 app.get("/", (req, res) => {
   res.sendFile(__dirname + `/src/html/index.html`);
@@ -24,6 +26,11 @@ app.get("/login", (req, res) => {
 
 //registration controller
 app.get("/register", (req, res) => {
+  console.log(req.query);
+  res.sendFile(__dirname + `/src/html/register.html`);
+});
+app.post("/register", (req, res) => {
+  console.log(req.body);
   res.sendFile(__dirname + `/src/html/register.html`);
 });
 
